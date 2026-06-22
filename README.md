@@ -1,4 +1,4 @@
-﻿# FutballLatest
+# FutballLatest
 <br /> 
 
 ### Languages and Technologies
