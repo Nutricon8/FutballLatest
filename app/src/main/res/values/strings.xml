@@ -67,4 +67,35 @@
     <string name="ft">FT</string>
     <string name="continue_string">Continue</string>
     <string name="next">Next</string>
+
+    <!-- New strings for enhanced match details -->
+    <string name="tab_stats">Stats</string>
+    <string name="tab_goals">Goals</string>
+    <string name="tab_lineups">Lineups</string>
+    <string name="tab_cards">Cards</string>
+    <string name="head_to_head">Head to Head</string>
+    <string name="matches_played">Matches</string>
+    <string name="wins">Wins</string>
+    <string name="draws">Draws</string>
+    <string name="losses">Losses</string>
+    <string name="goals_timeline">Goals Timeline</string>
+    <string name="cards_header">Cards</string>
+    <string name="substitutions">Substitutions</string>
+    <string name="no_goals">No goals scored</string>
+    <string name="no_cards">No cards shown</string>
+    <string name="no_substitutions">No substitutions</string>
+    <string name="assist">Assist</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+    <string name="second_yellow">Second Yellow</string>
+    <string name="starting_lineup">Starting XI</string>
+    <string name="substitutes">Substitutes</string>
+    <string name="coach">Coach</string>
+    <string name="venue">Venue</string>
+    <string name="referee">Referee</string>
+    <string name="attendance">Attendance</string>
+    <string name="ht">HT</string>
+    <string name="home_table">Home</string>
+    <string name="away_table">Away</string>
+    <string name="overall_table">Overall</string>
 </resources>

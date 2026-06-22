@@ -5,8 +5,40 @@
     android:layout_height="match_parent"
     tools:context=".competition.StandingsFragment">
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/tableTypeChipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipOverall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/overall_table" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_table" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/away_table" />
+    </com.google.android.material.chip.ChipGroup>
+
     <LinearLayout
         android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableTypeChipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

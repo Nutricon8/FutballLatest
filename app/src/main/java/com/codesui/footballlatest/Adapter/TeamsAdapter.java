@@ -1,5 +1,7 @@
 package com.codesui.footballlatest.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.codesui.footballlatest.R;
+import com.codesui.footballlatest.activities.TeamDetailActivity;
 import com.codesui.footballlatest.data.Team;
 import com.squareup.picasso.Picasso;
 
@@ -18,6 +21,7 @@ import java.util.List;
 
 public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.ViewHolder> {
     private final List<Team> teamList;
+    private Context context;
 
     public TeamsAdapter(List<Team> list) {
         this.teamList = list;
@@ -25,6 +29,7 @@ public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.ViewHolder> 
 
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_favorite, parent, false);
         return new ViewHolder(view);
     }
@@ -40,12 +45,20 @@ public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.ViewHolder> 
         }
 
         holder.itemView.setOnClickListener(view -> {
-            boolean newFavoriteState = !team.isFavorite();  // Toggle state
+            Intent intent = new Intent(context, TeamDetailActivity.class);
+            intent.putExtra("teamId", team.getId());
+            intent.putExtra("teamName", team.getName());
+            intent.putExtra("teamCrest", team.getImage());
+            context.startActivity(intent);
+        });
+
+        holder.buttonFavorite.setOnClickListener(view -> {
+            boolean newFavoriteState = !team.isFavorite();
             team.setFavorite(newFavoriteState);
             if (newFavoriteState) {
-                holder.buttonFavorite.setImageResource(R.drawable.baseline_star_24); // Filled star
+                holder.buttonFavorite.setImageResource(R.drawable.baseline_star_24);
             } else {
-                holder.buttonFavorite.setImageResource(R.drawable.baseline_star_outline_24); // Outline star
+                holder.buttonFavorite.setImageResource(R.drawable.baseline_star_outline_24);
             }
         });
     }
